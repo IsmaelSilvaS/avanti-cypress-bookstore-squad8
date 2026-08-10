@@ -95,7 +95,7 @@ git push origin NOME-DA-SUA-BRANCH
 ### 📁 Estrutura de Pastas do Projeto
 
 ```text
-avanade-cypress-bookstore-squad8/
+avanti-cypress-bookstore-squad8/
 ├── cypress/
 │   ├── e2e/               # Onde ficam os arquivos de teste (.cy.js)
 │   ├── fixtures/          # Dados estáticos para testes
