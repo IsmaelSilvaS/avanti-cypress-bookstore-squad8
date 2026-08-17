@@ -13,18 +13,9 @@ Casos automatizados:
 
 describe('Cenário 04 - Coleção (https://demoqa.com/books)', () => {
     const livroTeste = 'Designing Evolvable Web APIs with ASP.NET';
-    let usuario;
-    let senha;
-
-    before(() => {
-        cy.fixture('usuario').then((dados) => {
-            usuario = dados.usuario;
-            senha = dados.senha;
-        });
-    });
 
     beforeEach(() => {
-        cy.login(usuario, senha);
+        cy.login();
     });
 
     it('CT01 - Deve exibir corretamente o livro adicionado na coleção do usuário', () => {
@@ -36,11 +27,9 @@ describe('Cenário 04 - Coleção (https://demoqa.com/books)', () => {
     it('CT04 - Deve remover individualmente um livro da coleção', () => {
         cy.adicionarLivroAColecao(livroTeste);
         cy.visit('/profile');
-        // cy.contains('a', livroTeste).should('be.visible').closest('tr').find('.action-buttons').click();
-        cy.contains('a', livroTeste).should('be.visible').closest('tr').find('span[title="Delete"]').click();
-        cy.get('.modal-content').should('be.visible').within(() => {
-            cy.contains('button', 'OK').click();
-        });
+        // cy.contains('a', livroTeste).should('be.visible').closest('tr').find('span[title="Delete"]').click();
+        cy.contains('a', livroTeste).should('be.visible');
+        cy.removerLivroDaColecao(livroTeste);
         cy.contains('a', livroTeste).should('not.exist');
     });
 
