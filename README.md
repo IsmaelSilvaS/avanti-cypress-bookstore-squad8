@@ -16,9 +16,9 @@ Este repositório contém a automação de testes para a aplicação **DemoQA Bo
 
 | Funcionalidade | Responsável | Branch do Git | Status |
 | :--- | :--- | :--- | :---: |
-| **Login** | Integrante 1 | `feature/login` | ⏳ Em Andamento |
-| **Cadastro** | Integrante 2 | `feature/cadastro` | ⏳ Em Andamento |
-| **Busca** | Integrante 3 | `feature/busca-livros` | ⏳ Em Andamento |
+| **Login** | Leandro Bernardini | `feature/login` | ⏳ Em Andamento |
+| **Cadastro** | Andrew Souza | `feature/cadastro` | ⏳ Em Andamento |
+| **Busca** | Isadora Furtado | `feature/busca-livros` | ⏳ Em Andamento |
 | **Coleção** | Ismael da Silva Santos | `feature/adicionar-colecao` | ⏳ Em Andamento |
 | **Regressivo** | Integrante 5 | `feature/adicionar-colecao` | ⏳ Em Andamento |
 
