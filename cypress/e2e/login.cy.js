@@ -1,7 +1,11 @@
-// testando subir pro github
+// subindo o primeiro caso de teste de Login Válido
+
 describe('Login Tests', () => {
-    it('login valido')
-        cy.visit('https://example.cypress.io/__/#/specs/runner?file=cypress/e2e/spec.cy.js')
-        
-        cy.it('')
+    it('login válido', () => {
+        cy.visit('https://demoqa.com/login')
+
+        cy.get('#userName').type('testadorqa')
+        cy.get('#password').type('Testador@123')
+        cy.get('#login').click()
+    })
 })
