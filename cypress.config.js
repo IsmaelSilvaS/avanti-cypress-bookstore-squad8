@@ -8,5 +8,10 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
+    blockHosts: [
+      "*doubleclick.net",
+      "*google-analytics.com",
+      "*analytics.google.com",
+    ]
   },
 });
