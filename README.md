@@ -1,4 +1,4 @@
-<img width="1872" height="621" alt="image" src="https://github.com/user-attachments/assets/87d650cf-9fe4-4fac-b950-f06f354ae59a" /># 📚 Automação de Testes Cypress - DemoQA Book Store
+# 📚 Automação de Testes Cypress - DemoQA Book Store
 
 > **Projeto Prático Avanti Bootcamp — Squad 8**
 
