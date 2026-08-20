@@ -1,4 +1,4 @@
-# 📚 Automação de Testes Cypress - DemoQA Book Store
+<img width="1872" height="621" alt="image" src="https://github.com/user-attachments/assets/87d650cf-9fe4-4fac-b950-f06f354ae59a" /># 📚 Automação de Testes Cypress - DemoQA Book Store
 
 > **Projeto Prático Avanti Bootcamp — Squad 8**
 
@@ -94,6 +94,15 @@ npx cypress run
 | CT01 | Exibição correta dos livros adicionados na coleção        | Passou | ✅ |
 | CT04 | Remoção individual de um livro da coleção                 | Passou | ✅ |
 | CT05 | Remoção completa de todos os livros da coleção            | Passou | ✅ |
+
+**Funcionalidade: Registro (`/profile`)**
+
+| ID   | Caso de teste                                            | Status manual | Status automação |
+|------|-----------------------------------------------------------|:---:|:---:|
+| CT01 | Registro com sucesso                                      | Passou | ✅ |
+| CT02 | Validação usuario já cadastrado                           | Passou | ✅ |
+| CT03 | Validar campos obrigatório                                | Passou | ✅ |
+| CT04 | Validar campos inválidos                                  | Passou | ✅ |
 
 > Cada integrante deve adicionar aqui a tabela da sua própria funcionalidade conforme for concluindo os testes automatizados.
 
