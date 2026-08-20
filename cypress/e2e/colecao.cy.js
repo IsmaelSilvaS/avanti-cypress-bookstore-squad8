@@ -34,11 +34,6 @@ describe('Cenário 04 - Coleção (https://demoqa.com/books)', () => {
     });
 
     it('CT05 - Deve remover todos os livros ao clicar em "Excluir todos os livros"', () => {
-        Cypress.on('uncaught:exception', (err) => {
-            console.log('Erro da aplicação:', err.message);
-            return false;
-        });
-
         cy.adicionarLivroAColecao(livroTeste);
         cy.visit('/profile');
         cy.contains('a', livroTeste).should('be.visible');
