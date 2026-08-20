@@ -12,8 +12,9 @@ Casos automatizados:
 
 */
 
-describe('Login Tests', () => {
-    it('Todos os campos válidos', () => {
+describe('Cenário 02 - Login', () => {
+
+    it('CT01 -Todos os campos válidos', () => {
         const credenciais = Cypress.env('todos_campos_validos')
 
         cy.visit('https://demoqa.com/login')
@@ -23,7 +24,7 @@ describe('Login Tests', () => {
         cy.get('#login').click()
     })
 
-    it('Login inválido', () => {
+    it('CT02 - Login inválido', () => {
         const credenciais = Cypress.env('usuario_invalido')
 
         cy.visit('https://demoqa.com/login')
@@ -33,7 +34,7 @@ describe('Login Tests', () => {
         cy.get('#login').click()
     })
 
-    it('Senha inválida', () => {
+    it('CT03 - Senha inválida', () => {
         const credenciais = Cypress.env('senha_invalida')
 
         cy.visit('https://demoqa.com/login')
@@ -44,7 +45,7 @@ describe('Login Tests', () => {
 
     })
 
-    it('Todos os campos inválidos', () => {
+    it('CT04 -Todos os campos inválidos', () => {
         const credenciais = Cypress.env('todos_campos_invalidos')
 
         cy.visit('https://demoqa.com/login')
