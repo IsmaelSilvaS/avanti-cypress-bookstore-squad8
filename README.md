@@ -113,6 +113,15 @@ npx cypress run
 | CT03 | Validar o login com o campo senha inválido                | Passou | ✅ |
 | CT04 | Validar o login com todos os campos inválidos             | Passou | ✅ |
 
+**Funcionalidade: Busca (`/profile`)**
+
+| ID   | Caso de teste                                            | Status manual | Status automação |
+|------|-----------------------------------------------------------|:---:|:---:|
+| CT02 | Busca por título completo                                 | Passou | ✅ |
+| CT03 | Busca por autor                                           | Passou | ✅ |
+| CT05 | Busca utilizando parte do título                          | Passou | ✅ |
+| CT11 | Acessar os detalhes de um livro                           | Passou | ✅ |
+
 > Cada integrante deve adicionar aqui a tabela da sua própria funcionalidade conforme for concluindo os testes automatizados.
 
 ---
