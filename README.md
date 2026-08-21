@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://cdn.discordapp.com/attachments/1492221028016062695/1540149456438165655/image.png?ex=6a88e775&is=6a8795f5&hm=497aaacbebceef0c5ca006b68d635460b7d513c1240f42f830e9423ca1506db9" alt="Imagem">
+</p>
+
 # 📚 Automação de Testes Cypress - DemoQA Book Store
 
 > **Projeto Prático Avanti Bootcamp — Squad 8**
@@ -16,11 +20,11 @@ Este repositório contém a automação de testes para a aplicação **DemoQA Bo
 
 | Funcionalidade | Responsável | Branch do Git | Status |
 | :--- | :--- | :--- | :---: |
-| **Login** | Leandro Bernardini | `feature/login` | ⏳ Em Andamento |
-| **Cadastro** | Andrew Souza | `feature/cadastro` | ⏳ Em Andamento |
-| **Busca** | Isadora Furtado | `feature/busca-livros` | ⏳ Em Andamento |
-| **Coleção** | Ismael da Silva Santos | `feature/adicionar-colecao` | ⏳ Em Andamento |
-| **Regressivo** | Integrante 5 | `a verificar` | ⏳ Em Andamento |
+| **Login** | Leandro Bernardini | `feature/login` | 🤖 Automatizado |
+| **Cadastro** | Andrew Souza | `feature/cadastro` | 🤖 Automatizado |
+| **Busca** | Isadora Furtado | `feature/busca-livros` | 🤖 Automatizado |
+| **Coleção** | Ismael da Silva Santos | `feature/adicionar-colecao` | 🤖 Automatizado |
+| **Jornada-Usuário** | Todos | `feature/cadastro` | 🤖 Automatizado |
 
 ---
 
@@ -103,6 +107,24 @@ npx cypress run
 | CT02 | Validação usuario já cadastrado                           | Passou | ✅ |
 | CT03 | Validar campos obrigatório                                | Passou | ✅ |
 | CT04 | Validar campos inválidos                                  | Falhou | ❌ |
+
+**Funcionalidade: Login (`/profile`)**
+
+| ID   | Caso de teste                                            | Status manual | Status automação |
+|------|-----------------------------------------------------------|:---:|:---:|
+| CT01 | Validar o login com todos os campos válidos               | Passou | ✅ |
+| CT02 | Validar o login com o campo usuário inválido              | Passou | ✅ |
+| CT03 | Validar o login com o campo senha inválido                | Passou | ✅ |
+| CT04 | Validar o login com todos os campos inválidos             | Passou | ✅ |
+
+**Funcionalidade: Busca (`/profile`)**
+
+| ID   | Caso de teste                                            | Status manual | Status automação |
+|------|-----------------------------------------------------------|:---:|:---:|
+| CT02 | Busca por título completo                                 | Passou | ✅ |
+| CT03 | Busca por autor                                           | Passou | ✅ |
+| CT05 | Busca utilizando parte do título                          | Passou | ✅ |
+| CT11 | Acessar os detalhes de um livro                           | Passou | ✅ |
 
 > Cada integrante deve adicionar aqui a tabela da sua própria funcionalidade conforme for concluindo os testes automatizados.
 
