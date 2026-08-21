@@ -34,46 +34,15 @@ const caseData = [
 ];
 
 const slides = [
-  {
-    title: 'QA Guardians | Projeto DemoQA Book Store',
-    text: 'Nosso projeto teve como objetivo realizar testes na aplicação DemoQA Book Store, avaliando principalmente cadastro, login, busca e coleção.',
-    meta: 'Slide 1 de 8'
-  },
-  {
-    title: 'Definição do Sistema',
-    text: 'O sistema simula uma livraria online, com visualização do acervo, pesquisa de livros, cadastro, autenticação e gerenciamento da coleção.',
-    meta: 'Slide 2 de 8'
-  },
-  {
-    title: 'Estratégia de Testes',
-    text: 'A abordagem consolidou testes funcionais em nível de sistema, foco em interface, com técnica de caixa-preta e suporte de testes exploratórios.',
-    meta: 'Slide 3 de 8'
-  },
-  {
-    title: 'Resultados',
-    text: 'O roteiro do projeto informa 57 casos listados e executados, 39 aprovados e 18 falhas identificadas, com destaque para cenários de cadastro e busca.',
-    meta: 'Slide 4 de 8'
-  },
-  {
-    title: 'Resultados (continuação)',
-    text: 'As falhas destacaram problemas com espaços, limites de caracteres, caracteres especiais e atualização visual após ações na coleção.',
-    meta: 'Slide 5 de 8'
-  },
-  {
-    title: 'Automação com Cypress',
-    text: 'O escopo de automação inclui fluxo de login, cadastro, busca e coleção, com execução baseada em comandos como cy.visit(), cy.get(), .type() e assertions com .should().',
-    meta: 'Slide 6 de 8'
-  },
-  {
-    title: 'Lições Aprendidas',
-    text: 'A equipe reconheceu a importância de testar cenários negativos, documentar problemas e trabalhar de forma colaborativa em Git/GitHub.',
-    meta: 'Slide 7 de 8'
-  },
-  {
-    title: 'Encerramento',
-    text: 'Qualidade não é apenas encontrar bugs, mas prevenir que eles cheguem ao usuário.',
-    meta: 'Slide 8 de 8'
-  }
+  { image: 'slides/slide_1.webp' },
+  { image: 'slides/slide_2.webp' },
+  { image: 'slides/slide_3.webp' },
+  { image: 'slides/slide_4.webp' },
+  { image: 'slides/slide_5.webp' },
+  { image: 'slides/slide_6.webp' },
+  { image: 'slides/slide_7.webp' },
+  { image: 'slides/slide_8.webp' },
+  { image: 'slides/Slide_9.webp' }
 ];
 
 const renderCases = () => {
@@ -113,19 +82,24 @@ const toggleSection = (sectionId) => {
 
 const renderSlide = (index) => {
   const slide = slides[index];
-  const title = document.getElementById('slideTitle');
-  const text = document.getElementById('slideText');
+  const image = document.getElementById('slideImage');
   const meta = document.getElementById('slideMeta');
   const counter = document.getElementById('slideCounter');
+  const modalImage = document.getElementById('fullscreenImage');
 
-  if (!slide || !title || !text || !meta || !counter) {
+  if (!slide || !image || !meta || !counter) {
     return;
   }
 
-  title.textContent = slide.title;
-  text.textContent = slide.text;
+  image.src = slide.image;
+  image.alt = `Slide ${index + 1} da apresentação`;
   meta.textContent = `${String(index + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
   counter.textContent = `Slide ${index + 1} de ${slides.length}`;
+
+  if (modalImage) {
+    modalImage.src = slide.image;
+    modalImage.alt = `Slide ${index + 1} em tela cheia`;
+  }
 };
 
 const initSlides = () => {
@@ -133,10 +107,29 @@ const initSlides = () => {
 
   const prev = document.getElementById('prevSlide');
   const next = document.getElementById('nextSlide');
+  const imageButton = document.getElementById('slideImageButton');
+  const fullscreenModal = document.getElementById('fullscreenModal');
+  const closeFullscreen = document.getElementById('closeFullscreen');
 
   const update = (nextIndex) => {
     currentSlide = (nextIndex + slides.length) % slides.length;
     renderSlide(currentSlide);
+  };
+
+  const openFullscreen = () => {
+    if (!fullscreenModal) {
+      return;
+    }
+
+    fullscreenModal.classList.remove('hidden');
+  };
+
+  const closeFullscreenView = () => {
+    if (!fullscreenModal) {
+      return;
+    }
+
+    fullscreenModal.classList.add('hidden');
   };
 
   if (prev) {
@@ -147,6 +140,22 @@ const initSlides = () => {
     next.addEventListener('click', () => update(currentSlide + 1));
   }
 
+  if (imageButton) {
+    imageButton.addEventListener('click', openFullscreen);
+  }
+
+  if (closeFullscreen) {
+    closeFullscreen.addEventListener('click', closeFullscreenView);
+  }
+
+  if (fullscreenModal) {
+    fullscreenModal.addEventListener('click', (event) => {
+      if (event.target === fullscreenModal) {
+        closeFullscreenView();
+      }
+    });
+  }
+
   document.addEventListener('keydown', (event) => {
     if (event.key === 'ArrowLeft') {
       update(currentSlide - 1);
@@ -154,6 +163,10 @@ const initSlides = () => {
 
     if (event.key === 'ArrowRight') {
       update(currentSlide + 1);
+    }
+
+    if (event.key === 'Escape') {
+      closeFullscreenView();
     }
   });
 
