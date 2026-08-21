@@ -102,7 +102,7 @@ npx cypress run
 | CT01 | Registro com sucesso                                      | Passou | ✅ |
 | CT02 | Validação usuario já cadastrado                           | Passou | ✅ |
 | CT03 | Validar campos obrigatório                                | Passou | ✅ |
-| CT04 | Validar campos inválidos                                  | Passou | ✅ |
+| CT04 | Validar campos inválidos                                  | Falhou | ❌ |
 
 > Cada integrante deve adicionar aqui a tabela da sua própria funcionalidade conforme for concluindo os testes automatizados.
 
