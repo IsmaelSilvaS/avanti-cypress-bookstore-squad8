@@ -189,12 +189,12 @@ const initWorkflowButton = () => {
     const text = status.querySelector('p');
 
     if (pill) {
-      pill.textContent = 'Futura integração';
+      pill.textContent = 'Redirecionando';
       pill.className = 'status-pill ready';
     }
 
     if (text) {
-      text.textContent = 'A execução real do Cypress será integrada via GitHub Actions em uma etapa posterior.';
+      text.textContent = 'Você está sendo direcionado para o GitHub Actions para iniciar a execução do Cypress.';
     }
   });
 };
