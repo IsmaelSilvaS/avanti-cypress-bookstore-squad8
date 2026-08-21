@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://cdn.discordapp.com/attachments/1492221028016062695/1540149456438165655/image.png?ex=6a88e775&is=6a8795f5&hm=497aaacbebceef0c5ca006b68d635460b7d513c1240f42f830e9423ca1506db9" alt="Imagem">
+</p>
+
 # 📚 Automação de Testes Cypress - DemoQA Book Store
 
 > **Projeto Prático Avanti Bootcamp — Squad 8**
