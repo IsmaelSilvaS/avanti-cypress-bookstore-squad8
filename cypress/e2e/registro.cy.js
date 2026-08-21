@@ -1,7 +1,21 @@
+/* 
+
+CENÁRIO 01 - Registro
+Autor: Andrew Eduardo J. Souza Machado
+Automação: Cypress
+
+Casos automatizados:
+1. CT01: Registro com sucesso
+2. CT02: Validação usuario já cadastrado
+3. CT03: Validar campos obrigatório
+4. CT04: Validar campos inválidos
+
+*/
+
 import { faker } from '@faker-js/faker';
 import '../pages/registro-page/registro-page'
 
-describe('Validar Cadastro', () => {
+describe('Cenario 1 - Registro', () => {
 
 
   var user= faker.internet.username();
@@ -10,7 +24,7 @@ describe('Validar Cadastro', () => {
     cy.visit('https://demoqa.com/register');
   });
 
-  it.only('Cadastro com sucesso', () => {
+  it('CT01 - Registro com sucesso', () => {
     cy.prepareAlertStub(); // Registra o monitoramento do alerta
     cy.typeFirstName('Saulo');
     cy.typeLastName('Silva');
@@ -21,7 +35,7 @@ describe('Validar Cadastro', () => {
     cy.assertAccountCreated();
   })
 
-  it.only('Validação usuario já cadastrado', () => {
+  it('CT02 - Validação usuario já cadastrado', () => {
     cy.typeFirstName('Saulo');
     cy.typeLastName('Silva');
     cy.typeUserName(user);
@@ -31,43 +45,7 @@ describe('Validar Cadastro', () => {
     cy.assertMessageUserExist();
   })
 
-  it('Validar nome obrigatório', () => {
-    cy.typeLastName('Silva');
-    cy.typeUserName(faker.internet.username());
-    cy.typePassword('Senha@1234');
-    cy.clickRegister();
-
-    cy.assertFirstNameRequired();
-  })
-
-  it('Validar sobrenome obrigatório', () => {
-    cy.typeFirstName('Saulo');
-    cy.typeUserName(faker.internet.username());
-    cy.typePassword('Senha@1234');
-    cy.clickRegister();
-
-    cy.assertLastNameRequired();
-  })
-
-  it('Validar username obrigatório', () => {
-    cy.typeFirstName('Saulo');
-    cy.typeLastName('Silva');
-    cy.typePassword('Senha@1234');
-    cy.clickRegister();
-
-    cy.assertUserNameRequired();
-  })
-
-  it('Validar senha obrigatório', () => {
-    cy.typeFirstName('Saulo');
-    cy.typeLastName('Silva');
-    cy.typeUserName(faker.internet.username());
-    cy.clickRegister();
-
-    cy.assertPasswordRequired();
-  })
-
-  it.only('Validar campos obrigatório', () => {
+  it('CT03 - Validar campos obrigatório', () => {
 
     cy.clickRegister();
 
@@ -77,31 +55,7 @@ describe('Validar Cadastro', () => {
     cy.assertPasswordRequired();
   })
 
-  it('Validar nome inválido', () => {
-    cy.prepareAlertStub();
-    cy.typeFirstName('M1c@_%');
-    cy.typeLastName('Silva');
-    cy.typeUserName(faker.internet.username());
-    cy.typePassword('Senha@1234');
-    cy.clickRegister();
-
-    cy.assertAccountCreated();
-    cy.assertFirstNameInvalid();
-  })
-
-  it('Validar sobrenome inválido', () => {
-    cy.prepareAlertStub();
-    cy.typeFirstName('Mica');
-    cy.typeLastName('S0uz@_%');
-    cy.typeUserName(faker.internet.username());
-    cy.typePassword('Senha@1234');
-    cy.clickRegister();
-
-    cy.assertAccountCreated();
-    cy.assertLastNameInvalid();
-  })
-
-  it.only('Validar campos inválidos', () => {
+  it('CT04 - Validar campos inválidos', () => {
     cy.prepareAlertStub(); 
     cy.typeFirstName('M1c@_%');
     cy.typeLastName('     ');
@@ -110,50 +64,12 @@ describe('Validar Cadastro', () => {
     cy.clickRegister();
 
     cy.assertAccountCreated();
+    cy.log("Este teste possui uma validação de cadastro para fins visuais do erro");
+
     cy.assertFirstNameInvalid();
     cy.assertLastNameInvalid();
-  })
 
-  it('Validar nome apenas com espaço', () => {
-    cy.typeFirstName('     ');
-    cy.typeLastName('Souza');
-    cy.typeUserName(faker.internet.username());
-    cy.typePassword('Senha@1234');
-    cy.clickRegister();
-
-    cy.assertAccountCreated();
-    cy.assertFirstNameRequired();
-  })
-
-  it('Validar sobrenome apenas com espaço', () => {
-    cy.typeFirstName('Mica');
-    cy.typeLastName('    ');
-    cy.typeUserName(faker.internet.username());
-    cy.typePassword('Senha@1234');
-    cy.clickRegister();
-
-    cy.assertAccountCreated();
-    cy.assertLastNameRequired();
-  })
-
-  it('Validar username apenas com espaço', () => {
-    cy.typeFirstName('Mica');
-    cy.typeLastName('Souza');
-    cy.typeUserName("     ");
-    cy.typePassword('Senha@1234');
-    cy.clickRegister();
-
-    cy.assertUserNameRequired();
-  })
-
-  it('Validar senha apenas com espaço', () => {
-    cy.typeFirstName('Mica');
-    cy.typeLastName('Souza');
-    cy.typeUserName(faker.internet.username());
-    cy.typePassword('         ');
-    cy.clickRegister();
-
-    cy.assertPasswordInvalid();
+    cy.log("Este teste possui uma validação de cadastro para fins visuais do erro");
   })
 
 })
