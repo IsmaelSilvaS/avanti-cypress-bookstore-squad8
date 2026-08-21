@@ -16,11 +16,11 @@ Este repositório contém a automação de testes para a aplicação **DemoQA Bo
 
 | Funcionalidade | Responsável | Branch do Git | Status |
 | :--- | :--- | :--- | :---: |
-| **Login** | Leandro Bernardini | `feature/login` | ⏳ Em Andamento |
-| **Cadastro** | Andrew Souza | `feature/cadastro` | ⏳ Em Andamento |
-| **Busca** | Isadora Furtado | `feature/busca-livros` | ⏳ Em Andamento |
-| **Coleção** | Ismael da Silva Santos | `feature/adicionar-colecao` | ⏳ Em Andamento |
-| **Regressivo** | Integrante 5 | `a verificar` | ⏳ Em Andamento |
+| **Login** | Leandro Bernardini | `feature/login` | 🤖 Automatizado |
+| **Cadastro** | Andrew Souza | `feature/cadastro` | 🤖 Automatizado |
+| **Busca** | Isadora Furtado | `feature/busca-livros` | 🤖 Automatizado |
+| **Coleção** | Ismael da Silva Santos | `feature/adicionar-colecao` | 🤖 Automatizado |
+| **Jornada-Usuário** | Todos | `feature/cadastro` | 🤖 Automatizado |
 
 ---
 
@@ -103,6 +103,15 @@ npx cypress run
 | CT02 | Validação usuario já cadastrado                           | Passou | ✅ |
 | CT03 | Validar campos obrigatório                                | Passou | ✅ |
 | CT04 | Validar campos inválidos                                  | Falhou | ❌ |
+
+**Funcionalidade: Login (`/profile`)**
+
+| ID   | Caso de teste                                            | Status manual | Status automação |
+|------|-----------------------------------------------------------|:---:|:---:|
+| CT01 | Validar o login com todos os campos válidos               | Passou | ✅ |
+| CT02 | Validar o login com o campo usuário inválido              | Passou | ✅ |
+| CT03 | Validar o login com o campo senha inválido                | Passou | ✅ |
+| CT04 | Validar o login com todos os campos inválidos             | Passou | ✅ |
 
 > Cada integrante deve adicionar aqui a tabela da sua própria funcionalidade conforme for concluindo os testes automatizados.
 
